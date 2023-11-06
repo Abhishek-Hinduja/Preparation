@@ -34,18 +34,40 @@ function eventhandler(event){
         container.setAttribute("class", "contain")
         heading.setAttribute("id", "heading")
         deletebutton.setAttribute("id", "delete")
-        readbutton.setAttribute("id", "read")
-
+        readbutton.setAttribute("id", "read")       
         deletebutton.innerHTML = "delete"
         readbutton.innerHTML = "read"
         heading.innerHTML = value
+        var uniqueid = "Todo-" + Date.now()
         
         container.appendChild(heading)
         container.appendChild(readbutton)
         container.appendChild(deletebutton)
         leftdiv.appendChild(container)
-        todos.push(value)
+        todos.push({
+            id:uniqueid,
+            text:value
+        })
+    
         localStorage.setItem('todo', JSON.stringify(todos))
+        deletebutton.addEventListener("click",function(){
+            container.remove()
+            var index = todos.findIndex((Gourav)=>Gourav.id===uniqueid)
+            if (index!==-1){
+                todos.splice(index,1)
+                localStorage.setItem("todo",JSON.stringify(todos))
+            }
+        })
+
+        readbutton.addEventListener("click",function(){
+            var newText = prompt("Enter the updated text")
+            heading.innerHTML = newText
+            var index = todos.findIndex((Gourav)=>Gourav.id===uniqueid)
+            if (index!==-1){
+                todos[index].text = newText
+                localStorage.setItem("todo",JSON.stringify(todos))
+            }
+        })
       
         input.value = ""
         
@@ -75,13 +97,29 @@ todos.forEach(function(value){
 
     deletebutton.innerHTML = "delete"
     readbutton.innerHTML = "read"
-    heading.innerHTML = value
+    heading.innerHTML = value.text
     
     container.appendChild(heading)
     container.appendChild(readbutton)
     container.appendChild(deletebutton)
     leftdiv.appendChild(container)
+
+    deletebutton.addEventListener("click",function(){
+        container.remove()
+        var index = todos.findIndex((Gourav)=>Gourav.id===uniqueid)
+        if (index!==-1){
+            todos.splice(index,1)
+            localStorage.setItem("todo",JSON.stringify(todos))
+        }
+    })
+
+    readbutton.addEventListener("click",function(){
+        var newText = prompt("Enter the updated text")
+        heading.innerHTML = newText
+        var index = todos.findIndex((Gourav)=>Gourav.id===uniqueid)
+        if (index!==-1){
+            todos[index].text = newText
+            localStorage.setItem("todo",JSON.stringify(todos))
+        }
+    })
 })
-
-
-
