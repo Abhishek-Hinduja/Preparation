@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+  
+}
+
+#main{
+    display: flex;
+    min-height: 100vh;
+}
+
+#left{
+    min-width: 50vw;
+    background-color: aqua;
+}
+
+#right{
+    min-width: 50vw;
+    background-color: bisque;
+}
+
+#input{
+    min-width: 49vw;
+    min-height: 40vh;
+}
+
+.contain{
+    margin-top: vh;
+    display: flex;
+    justify-content: center;
+}
+
+#read{
+    background-color: chartreuse;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#delete{
+    background-color: black;
+    margin: 15px 15px 15px 0px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+#heading{
+    background-color: hotpink;
+    margin: 15px 15px 15px 0px;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(40, 2, 2);
+}
