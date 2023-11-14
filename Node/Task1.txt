@@ -1,0 +1,14 @@
+Request to Server
+Task:
+You need to complete the user stories mentioned below:
+
+
+
+#1: Create a Server:
+Create a simple node.js server. This server should be able to handle the HTTP requests.
+
+
+
+#2: Root Route:
+Create routes to serve the static HTML pages.
+
